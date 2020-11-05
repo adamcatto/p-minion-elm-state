@@ -7,3 +7,5 @@ This is a repository of various implementations of algorithms and models I've ma
 * Hadamard Gate
 
 * LeNet (via Keras models/layers libraries)
+
+* Simple image segmentation with K-means clustering  (OpenCV)
