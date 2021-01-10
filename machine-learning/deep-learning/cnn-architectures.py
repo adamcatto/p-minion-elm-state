@@ -14,6 +14,11 @@ from tensorflow.keras.regularizers import l2
 
 # LeNet-5 CNN architecture
 def build_lenet_five(activation: str ='tanh'):
+    """
+
+    :param activation:
+    :return:
+    """
     nn = Sequential()
     nn.add(Conv2D(filters=6, kernel_size=5, strides=1, activation=activation,
                   input_shape=(28, 28, 1), padding='same'))
@@ -86,3 +91,24 @@ class AlexNet(object):
 
 net = AlexNet(activation='relu', lr=0.01, num_epochs=10000, optimizer='Adam')
 print(net.network.summary())
+
+# TODO: ResNet, GoogLeNet, R-CNN, Inception, VGGNet
+
+
+# general object detection framework class
+class ObjectDetector(object):
+    def __init__(self, region_proposal_function, feature_extractor_layers, classifier_layers,
+                 non_maximum_suppression, evaluation_metrics):
+        self.region_proposal_function = region_proposal_function
+        self.feature_extractor_layers = feature_extractor_layers
+        self.classifier_layers = classifier_layers
+        self.non_maximum_suppression = non_maximum_suppression
+        self.evaluation_metrics = evaluation_metrics
+
+
+def non_maximum_suppression(threshold):
+    pass
+
+
+def iou(ground_truth_box, predicted_box):
+    pass
